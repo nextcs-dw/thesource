@@ -1,3 +1,5 @@
+ int x = 0;
+ 
 void setup() {
   size (500, 500);
   background(#35388E);
@@ -5,15 +7,19 @@ void setup() {
 }//setup
 
 void draw() {
+
   if (frameCount % 30 == 0) {
+      background(#35388E);
     drawLightning(int(random(0, width)), 0, 40);
     println("strike: " + frameCount);
   }//if
+
+    circle(x, height/2, 25);
+    x++;
 }//draw
 
 
 void drawLightning(int x, int y, int numParts) {
-
   stroke(255);
   strokeWeight(4);
   int count = 0;
@@ -25,6 +31,6 @@ void drawLightning(int x, int y, int numParts) {
     line(x, y, nextx, nexty);
     x = nextx;
     y = nexty;
-    count++;
+    count++; // count += 1 // count = count + 1
   }//while
 }//drawLightning
