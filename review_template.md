@@ -7,6 +7,7 @@ C) 200 mph
 D) African or European?
 
 Answer: D
+
 ---
 #### MC Question:
 Who you gonna call?
@@ -18,6 +19,7 @@ C) Thundercats
 D) Teenage Mutant Ninja Turtles
 
 Answer: B
+
 ---
 #### Programming question:
 Write a function that draws a circle in the middle of the screen. The size and color should be parameters.
