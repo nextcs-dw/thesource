@@ -1,0 +1,261 @@
+
+=======================
+Question 0:
+Write a function that draws a circle in the middle of the screen. The size and color should be parameters.
+
+=======================
+Question 1:
+e made an error on the code. Here is this code:
+
+void setup(){
+size(300,300);
+background(0);
+fill(255);
+
+if (x == 10) {
+    rect(100, 100, 100, 100);
+}
+}
+
+What is wrong with the code from slow Joe?
+
+A) He made a typo and put two equal signs.
+B) He has empty parenthesis after "void setup".
+C) He only has one number after background.
+D) He did not declare the variable "x" before he used it.
+
+Correct Answer: D
+
+MC question 2. Which code is valid
+A. fill(0, 0);
+B) Tri(2, 2, 2, 2);
+C) strokeweight(10000);
+D) ellipse(100, 100, 20);
+
+Correct Answer: A
+
+Programming question 3. Write a function to make a suprised face. The code before the function is:
+
+void setup(){
+size(300,300);
+background(0);
+smiley();
+}
+
+Potential Answer:
+
+void smiley(){
+fill(255,255,0);
+circle(150,150,200);
+fill(0);
+circle(100,100,20);
+circle(200,100,20);
+circle(150,200,50);
+=======================
+Question 2:
+up(){
+    size (500,500);
+    turtle(x, y, z);
+}
+What is x, y, z?
+
+Options:
+a: parameters
+b: string
+c: boolean
+d: conditionals
+
+answer: a: parameters
+
+#### Programming Question:
+Create a target logo (3 circles on top of each other with alternating red and white)
+
+Possible Solution:
+'''
+size (500,500);
+fill (220,0,0);
+circle(250,250,350);
+fill(255,255,255);
+circle (250,250,250);
+fill (220,0,0);
+circle(250,250,150);
+
+''
+=======================
+Question 3:
+Write the word "Hi" with only shapes.
+
+=======================
+Question 4:
+Write a function that:
+Draws a circle of a diameter greater than or equal to 200 and less than 450 at a random coordinate
+Decreases in size by 0.8 every half-second
+Dissapears when the circle's diameter is less than 10
+Given:
+int x, y;//position of circle
+float size;//diameter of circle
+
+void setup() {
+  size(600,600);
+  frameRate(30);
+  background(255);
+  size = random(200,450);
+  x  = int(random(size/2, width-(size/2)));
+  y = int(random(size/2, height-(size/2)));
+}
+
+
+=======================
+Question 5:
+error on the code. Here is this code:
+
+void setup(){
+    size(300,300);
+    background(0);
+    fill(255);
+
+    if (x == 10) {
+	    rect(100, 100, 100, 100);
+    }
+}
+
+What is wrong with the code from sleepy Joe?
+
+A) He made a typo and put two equal signs.
+B) He has empty parenthesis after "void setup".
+C) He only has one number after background.
+D) He did not declare the variable "x" before he used it.
+
+Correct Answer: D
+
+2. Which code is valid
+A. fill(0, 0);
+B) Tri(2, 2, 2, 2);
+C) strokeweight(10000);
+D) ellipse(100, 100, 20);
+
+Correct Answer: A
+
+3. Write a function to make a suprised face. The code before the function is:
+
+void setup(){
+    size(300,300);
+    background(0);
+    smiley();
+}
+
+Potential Answer:
+
+void smiley(){
+    fill(255,255,0);
+    circle(150,150,200);
+    fill(0);
+    circle(100,100,20);
+    circle(200,100,20);
+    circle(150,200,50);
+=======================
+Question 6:
+Alice wrote a code to draw a circle in the middle of the screen, but processing returns an error message. What is wrong with this function?
+
+void setup() {
+    size (500, 500);
+    double x = 500;
+    double y = 500;
+    background(0);
+    color(255);
+    circle(x/2, y/2, 100);
+}
+
+
+=======================
+Question 7:
+Write a function that draws a circle in the middle of the screen. The size and color should be parameters.
+
+=======================
+Question 8:
+Write a circle function that gets bigger every second until it hits a edge.
+
+Possible Solution:
+=======================
+Question 9:
+Write a function that draws a square at a location. The size and corrdinates of the upperlefthand corner should be parameters. 
+The color should be random.
+=======================
+Question 10:
+Write a function that draws x equally spaced 1-pixel wide vertical lines across the screen. The color should be a parameter.
+
+=======================
+Question 11:
+Write a function for a circle starting at (50, 50) with radius 40 in a 100 by 100 display that moves one pixel a second in a random direction. (Does not have to stop upon reaching the display edge.)
+
+=======================
+Question 12:
+Answers
+=======================
+Question 13:
+Write a function that draws a lightning bolt to a random position on the screen. Draw the next x and y coordinates of the lightning from the previous x and y coordinates. Draw 5 lightning bolts on the screen. (screen size is 500,500)
+
+=======================
+Question 14:
+Write a function that draws certain shapes at the center of the screen.
+It has parameters of size and red, green, blue.
+
+Each shape has a border color set to the given color.
+If red is the most prevalent color, draw a circle.
+If green is the most prevalent color, draw a square.
+otherwise, draw a rectangle that has twice it's height, which is the size given, as width.
+
+=======================
+Question 15:
+Make a 500 x 500 window
+Make a filled circle (colour of your choice) situated at the center of the window.
+Move the filled circle upwards by increments of 1 unit until it touches the top of the window
+Make sure that it does not pass the window.
+=======================
+Question 16:
+Write a setup function that sets size to 400 x 400, framerate to 90, and draws a 20 x 20 pixel black square ont he top left corner of the scren. Write a draw function that increases the size of the square by 2 pixels every frame.
+
+=======================
+Question 17:
+Write a function that draws a right triangle. The vertex containing the right angle should be located at a random point on the screen. The height, width, and color of the triangle should be parameters.
+
+=======================
+Question 18:
+Draw a circle that switches between the 3 maximum RGB values every second (60 FPS, each change should occur every 1/3 of a second)
+
+=======================
+Question 19:
+Write a function that draws a square. Make a setup function that calls a square at a random location with random size.
+
+=======================
+Question 20:
+Write a  setup function that sets size to 400 x 400, framerate to 90 and draws a 20 px x 20 px black square on the top left corner of the screen. Write a draw function that increases the size of the square by 2 px every frame.
+
+=======================
+Question 21:
+Write a function that draws a square cut in half by a line. The parameters should be the size and color.
+
+=======================
+Question 22:
+Write a function that draws a circle in a random area on the screen with radius 10 for an n amount. 
+
+
+=======================
+Question 23:
+Write a function that draws a square. Make a setup function that calls a square at a random location with random size.
+
+=======================
+Question 24:
+Write two functions moving a square (1/16 screen) starting from the bottom left corner to the bottom right. Exact parameters of the screen is unknown but we know that it is a square. You do not need a setup funciton, and the frame rate is given in the setup (try to get it to move every 3 frames).
+
+=======================
+Question 25:
+Write a function that draws a square cut in half by a line. The parameters should be the size and color. 
+
+=======================
+Question 26:
+Write a function that randomly changes the color of the background 10 times a second.
+
+=======================
+Question 27:
+Write a function that draws a circle that switches between the 3 maximum RGB values every second (go FPS, each change should occur  every 1/3 of a second). 
