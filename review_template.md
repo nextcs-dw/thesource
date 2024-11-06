@@ -1,5 +1,6 @@
-#### MC Question:
+#### MC Question 
 Skill: 90001
+
 What is the air speed of an unladen swallow?
 Options:
 1. 2 mph
@@ -10,8 +11,9 @@ Options:
 Answer: 4
 
 ---
-#### MC Question:
+#### MC Question: 
 Skill: 9002
+
 Who you gonna call?
 
 Options:
@@ -25,6 +27,7 @@ Answer: 2
 ---
 #### Programming question:
 Skills: 1,2,3
+
 Write a function that draws a circle in the middle of the screen. The size and color should be parameters.
 Possible solution:
 ```
