@@ -1,27 +1,30 @@
 #### MC Question:
+Skill: 90001
 What is the air speed of an unladen swallow?
 Options:
-A) 2 mph
-B) 20 mph
-C) 200 mph
-D) African or European?
+1. 2 mph
+2. 20 mph
+3. 200 mph
+4. African or European?
 
-Answer: D
+Answer: 4
 
 ---
 #### MC Question:
+Skill: 9002
 Who you gonna call?
 
 Options:
-A) Transformers
-B) Ghostbusters
-C) Thundercats
-D) Teenage Mutant Ninja Turtles
+1. Transformers
+2. Ghostbusters
+3. Thundercats
+4. Teenage Mutant Ninja Turtles
 
-Answer: B
+Answer: 2
 
 ---
 #### Programming question:
+Skills: 1,2,3
 Write a function that draws a circle in the middle of the screen. The size and color should be parameters.
 Possible solution:
 ```
