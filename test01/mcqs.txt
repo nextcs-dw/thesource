@@ -6,11 +6,11 @@ Skill: 13
 Which does not need the use of keyCode
 Options:
 1. SHIFT
-2. ALT 
+2. ALT
 3. SPACE
 4. None of the above
 
-Answer: 4
+Answer: 3
 =======================
 Question 0.b:
 Skill: 14
@@ -28,7 +28,7 @@ Answer: 2
 Question 1.a:
 Skill: 15
 
-What does a class contain? 
+What does a class contain?
 
 Options:
 
