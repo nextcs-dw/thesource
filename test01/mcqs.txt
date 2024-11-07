@@ -1,0 +1,143 @@
+
+=======================
+Question 0.a:
+Skill: 13
+
+Which does not need the use of keyCode
+Options:
+1. SHIFT
+2. ALT 
+3. SPACE
+4. None of the above
+
+Answer: 4
+=======================
+Question 0.b:
+Skill: 14
+
+Where are object references stored?
+
+Options:
+1. Pile
+2. Stack
+3. Cache
+4. Heap
+
+Answer: 2
+=======================
+Question 1.a:
+Skill: 15
+
+What does a class contain? 
+
+Options:
+
+A) Fields
+
+B) Methods
+
+C) Constructors
+
+D) All of the above
+
+Answer: D
+=======================
+Question 1.b:
+Skill: 13
+
+How to refer to a mouses coordinates?
+
+Options:
+
+A) mouseCoordinateX, mouseCoordinateY
+
+B) Create variables
+
+C) mouseX, mouseY
+
+D) use the mouseClicked() method
+
+Answer: C
+=======================
+Question 2.a:
+Skill: 90001
+
+What does new.something do?
+Options:
+1. Learn something
+2. Eat something
+3. Do something
+4. Call something from the class.
+
+Answer: 4
+=======================
+Question 2.b:
+Skill: 9002
+
+What is class?
+
+Options:
+1. Classroom
+2. Bathroom
+3. Bedroom
+4. A file that is controlled by the driver file.
+
+Answer: 4
+=======================
+Question 3.a:
+Which one would correlate to pressing space bar?
+Options:
+A) keyPressed()
+B) MousePressed()
+C) key == ' '
+D) keyPressed(space)
+
+Answer: C
+=======================
+Question 3.b:
+What do you call the main input part of class code?
+
+Options:
+A) Class
+B) Constructor
+C) Object
+D) intialization
+
+Answer: B
+=======================
+Question 4.a:
+Skill: 5
+
+Which of the following boolean expressions will evaluate to true if x is 5?
+
+Options:
+1. x > 5 || x < 5
+2. x == 5 && x != 5
+3. !(x == 5)
+4. x >= 5 && x <= 5
+
+Answer: 4
+=======================
+Question 4.b:
+Skill: 11
+
+What will be the output of the following code snippet if score is 75?
+```
+if (score > 90) {
+    System.out.println("A");
+} else if (score > 80) {
+    System.out.println("B");
+} else if (score > 70) {
+    System.out.println("C");
+} else {
+    System.out.println("D");
+}
+```
+
+Options:
+1. A
+2. B
+3. C
+4. D
+
+Answer: 3
