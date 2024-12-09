@@ -48,7 +48,7 @@ void keyPressed() {
         keyCode == DOWN ||
         keyCode == LEFT ||
         keyCode == RIGHT) {
-      direction = key;
+      direction = keyCode;
 
     }//movement
 
