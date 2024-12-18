@@ -12,7 +12,6 @@ void setup() {
   size (600, 400);
   background(0);
   textSize(25);
-  sinWave = new SinOsc(this);
   dataSize =20;
   maxValue = max(300, dataSize);
   sorty = new SortArray(BUBBLE, dataSize, maxValue);
@@ -24,8 +23,6 @@ void draw() {
   if (liveSort) {
     sorty.sortOnce();
   }
-  frq = sorty.getPosValue();
-  sinWave.freq(frq + 200);
 }//draw
 
 
@@ -51,15 +48,7 @@ void keyPressed() {
     sorty.algorithm = INSERTION;
     reset();
   }
-  if (key == 'm') {
-    sound = !sound;
-    if (sound) {
-      sinWave.play();
-    }
-    else {
-      sinWave.stop();
-    }
-  }
+  
 }//keyPressed
 
 void reset() {
