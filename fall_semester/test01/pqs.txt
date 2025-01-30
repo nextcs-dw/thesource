@@ -1,0 +1,37 @@
+
+=======================
+Question 0:
+Skills: 5,11,13
+
+1. In setup(), set window size to 600 by 400 px, and background to black.
+2. Write a function that returns the distance between the current mouse coordinates and the mouse coordinates one frame before, called mouseDist().
+3. In draw(), continuously draw a line between the current and previous mouse coordinates. If mouseDist() is greater than 75, the line drawn
+  should be red. Else, if mouseDist() is greater than 40, the line drawn should be yellow. Any other value should make the line green.
+4. When spacebar is pressed, stop drawing the line. When 'r' is pressed, reset the drawings.
+
+=======================
+Question 1:
+Skills: 4, 6, 9, 13
+
+Write a function that draws a circle at your mouse's coordinates when it is pressed, but does not stay when you let go of your mouse.
+
+
+
+=======================
+Question 2:
+Skills: 9, 10, 11, 12, 13, 14, 15.
+
+Use new in driver file
+
+=======================
+Question 3:
+Write a function that draws a square anywhere on the screen once you press the "s" key:
+=======================
+Question 4:
+Skills: 15
+
+Write a class called Rectangle with two fields: width and height, both of type int. The class should include:
+. A constructor that initializes width and height.
+. A method area() that returns the area of the rectangle.
+. A method perimeter() that returns the perimeter of the rectangle.
+
