@@ -15,15 +15,6 @@ class PathShape {
     makeRandomShape();
   }
 
-  //makes a single PathShape with np points
-  //that takes up the entire screen
-  PathShape(int np) {
-    this(np, 0, 0, width);
-  }//num points constructor
-
-  PathShape() {
-    this(int(random(3, 20)));
-  }//default constructor
 
 
   void makeRandomShape() {
