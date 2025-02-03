@@ -5,7 +5,11 @@ class PathShape {
   PVector corner;
   int shapeSize;
   color inside;
-
+  
+  PathShape() {
+    this(int(random(3, 20)), 0, 0, 100);
+  }
+  
   PathShape(int np, int cx, int cy, int ss) {
     numPoints = np;
     corner = new PVector(cx, cy);
@@ -39,5 +43,13 @@ class PathShape {
     newPoint.y = int(random(shapeSize)) + corner.y;
     return newPoint;
   }//makeRandomPoint
-
+  
+  String toString() {
+    return "Shape: " + numPoints;
+  }
+  
+  String oldToString() {
+    return super.toString();
+  }
+  
 }//PathShape
