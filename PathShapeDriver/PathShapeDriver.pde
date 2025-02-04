@@ -19,11 +19,6 @@ void makeShapes() {
   shapes[1] = new PathShape(10, shapeSize, 0, shapeSize);
   shapes[2] = new PathShape(10, 0, shapeSize, shapeSize);
   shapes[3] = new PathShape(10, shapeSize, shapeSize, shapeSize);
-  
-  println(shapes[0].toString());
-  println(shapes[1].toString());
-  println(shapes[0].oldToString());
-  println(shapes[1].oldToString());
 }//makeShapes
 
 void drawShapes() {
