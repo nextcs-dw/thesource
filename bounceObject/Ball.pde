@@ -2,8 +2,8 @@ class Ball {
 
   //instance variables
   PVector center;
-  int xspeed;
-  int yspeed;
+  PVector velocity;
+  PVector acceleration;
   int bsize;
   color c;
 
@@ -11,7 +11,10 @@ class Ball {
    Ball(PVector p, int s) {
      bsize = s;
      center = new PVector(p.x, p.y);
-   }
+     velocity = new PVector();
+     //velocity = new PVector(random(-5, 5), random(-5, 5));
+     acceleration = new PVector();
+ }
 
   boolean collisionCheck(Ball other) {
     return ( this.center.dist(other.center)
@@ -32,14 +35,19 @@ class Ball {
   void move() {
     if (center.x > width - bsize/2 ||
         center.x < bsize/2) {
-        xspeed*= -1;
+        velocity.x *= -1;
      }
      if (center.y > height - bsize/2 ||
          center.y < bsize/2) {
-         yspeed*= -1;
+         velocity.y*= -1;
       }
-     center.x+= xspeed;
-     center.y+= yspeed;
+     velocity.add(acceleration);
+     center.add(velocity);
+     acceleration.mult(0);
   }//move
+  
+  void applyForce(PVector force) {
+    acceleration.add(force);
+  }
 
 }//Ball
