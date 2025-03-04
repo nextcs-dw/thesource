@@ -32,22 +32,24 @@ class Orb {
   boolean yBounce(){
     if (center.y > height - bsize/2) {
       velocity.y *= -1;
-      println("velocity change: " + velocity); 
+      center.y = height - bsize/2;
       return true;
     }//bottom bounce
     else if (center.y < bsize/2) {
-      //center.y = bsize/2;
       velocity.y*= -1;
+      center.y = bsize/2;
       return true;
     }
     return false;
   }//yBounce
   boolean xBounce() {
     if (center.x > width - bsize/2) {
+      center.x = width - bsize/2;
       velocity.x *= -1;
       return true;
     }
     else if (center.x < bsize/2) {
+      center.x = bsize/2;
       velocity.x *= -1;
       return true;
     }

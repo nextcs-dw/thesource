@@ -8,7 +8,7 @@ void setup() {
   size(1000, 400);
   moving = false;
 
-  b0 = new Orb(width/2, 25, 20);
+  b0 = new Orb(25, 25, 20);
   gravity = new PVector(0, 0.1);
   PVector push = new PVector(2, -2);
   b0.applyForce(gravity);
