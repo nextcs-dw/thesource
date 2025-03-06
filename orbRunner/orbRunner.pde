@@ -4,6 +4,7 @@ Orb[] orbs;
 int NUM_ORBS = 6;
 int MAX_SIZE = 60;
 int MIN_SIZE = 10;
+int MAX_MASS = 100;
 
 boolean moving;
 PVector gravity;

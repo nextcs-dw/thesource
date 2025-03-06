@@ -9,7 +9,7 @@ class Orb {
 
   //default constructor
   Orb() {
-     bsize = random(10, MAX_SIZE);
+     bsize = random(MIN_SIZE, MAX_SIZE);
      float x = random(bsize/2, width-bsize/2);
      float y = random(bsize/2, height-bsize/2);
      center = new PVector(x, y);
@@ -90,5 +90,6 @@ class Orb {
   void display() {
     fill(c);
     circle(center.x, center.y, bsize);
+    fill(0);
   }//display
 }//Ball
