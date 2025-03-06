@@ -1,30 +1,56 @@
-Orb b0;
+Orb[] orbs;
 
 //other variables
+int NUM_ORBS = 6;
+int MAX_SIZE = 60;
+int MIN_SIZE = 10;
+
 boolean moving;
 PVector gravity;
+PVector wind;
+float dcoef;
 
 void setup() {
-  size(1000, 400);
+  size(600, 600);
+  textAlign(LEFT, TOP);
+  textSize(20);
   moving = false;
 
-  b0 = new Orb(25, 25, 20);
-  gravity = new PVector(0, 0.1);
-  PVector push = new PVector(2, -2);
-  b0.applyForce(gravity);
-  //b0.applyForce(push);
+  orbs = new Orb[NUM_ORBS];
+  makeOrbs();
+
+  gravity = new PVector();
+  wind = new PVector();
+  dcoef = 0.1;
 }//setup
 
 void draw() {
   background(255);
 
-  b0.display();
+  fill(0, 255, 255);
+  rect(0, 200, width, height-200);
 
+  for (int i=0; i<orbs.length; i++) {
+    orbs[i].display();
+  }
   if (moving) {
-    b0.applyForce(gravity);
-    b0.move();
+    for (int i=0; i<orbs.length; i++) {
+      orbs[i].applyForce(gravity);
+      orbs[i].applyForce(wind);
+
+      if ((orbs[i].center.y + orbs[i].bsize/2) > 200) {
+        PVector drag = orbs[i].getDragForce(dcoef);
+        orbs[i].applyForce(drag);
+      }
+
+      orbs[i].move();
+    }
   }//moving
 
+  fill(0);
+  text("wind: " + wind, 0, 0);
+  text("gravity: " + gravity, 0, 20);
+  text("drag: " + dcoef, width-80, 0);
 }//draw
 
 void keyPressed() {
@@ -32,6 +58,29 @@ void keyPressed() {
     moving = !moving;
   }
   if (key == 'r') {
-    b0 = new Orb(random(width), random(height), 20);
+    makeOrbs();
+  }
+  if (keyCode == UP) {
+    gravity.y -=  0.1;
+  }
+  if (keyCode == DOWN) {
+    gravity.y += 0.1;
+  }
+  if (keyCode == RIGHT) {
+    wind.x += 0.1;
+  }
+  if (keyCode == LEFT) {
+    wind.x -= 0.1;
   }
 }//keyPressed
+
+
+void makeOrbs() {
+  float x = width / MAX_SIZE;
+  float y = MAX_SIZE;
+  for (int i=0; i<orbs.length; i++) {
+    float osize = random(MIN_SIZE, MAX_SIZE);
+    orbs[i] = new Orb(x, y, osize);
+    x+= width/NUM_ORBS;
+  }//for
+}//makeOrbs
