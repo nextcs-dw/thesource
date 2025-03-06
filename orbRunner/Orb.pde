@@ -5,11 +5,13 @@ class Orb {
   PVector velocity;
   PVector acceleration;
   float bsize;
+  float mass;
   color c;
 
   //default constructor
   Orb() {
      bsize = random(MIN_SIZE, MAX_SIZE);
+     mass = random(MIN_SIZE, MAX_MASS);
      float x = random(bsize/2, width-bsize/2);
      float y = random(bsize/2, height-bsize/2);
      center = new PVector(x, y);
@@ -18,8 +20,9 @@ class Orb {
      setColor();
   }
 
-   Orb(float x, float y, float s) {
+   Orb(float x, float y, float s, float m) {
      bsize = s;
+     mass = m;
      center = new PVector(x, y);
      velocity = new PVector();
      acceleration = new PVector();
@@ -37,7 +40,9 @@ class Orb {
   }//move
 
   void applyForce(PVector force) {
-    acceleration.add(force);
+    PVector scaleForce = force.copy();
+    scaleForce.div(mass);
+    acceleration.add(scaleForce);
   }
 
   PVector getDragForce(float cd) {
@@ -83,7 +88,9 @@ class Orb {
   }//collisionCheck
 
   void setColor() {
-    c = color(255, 0, 255);
+    color c0 = color(255);
+    color c1 = color(0);
+    c = lerpColor(c0, c1, (mass/bsize) / (MAX_MASS/MIN_SIZE));
   }//setColor
 
   //visual behavior

@@ -77,11 +77,12 @@ void keyPressed() {
 
 
 void makeOrbs() {
-  float x = width / MAX_SIZE;
+  float x = width/(NUM_ORBS+1);
   float y = MAX_SIZE;
   for (int i=0; i<orbs.length; i++) {
-    float osize = random(MIN_SIZE, MAX_SIZE);
-    orbs[i] = new Orb(x, y, osize);
-    x+= width/NUM_ORBS;
+    orbs[i] = new Orb();
+    orbs[i].center.x = y;
+    orbs[i].center.y = x;
+    x+= width/(NUM_ORBS+1);
   }//for
 }//makeOrbs
