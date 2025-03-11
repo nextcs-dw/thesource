@@ -1,4 +1,5 @@
 Orb orbs[];
+FixedOrb earth;
 
 //other variables
 int NUM_ORBS = 5;
@@ -18,14 +19,13 @@ void setup() {
 
   orbs = new Orb[NUM_ORBS];
   makeOrbs(true, true);
-  orbs[0] = new FixedOrb(width/2, height*500, 20, 1000);
-  
+  earth = new FixedOrb(width/2, height*100, 20, 1000);
 }//setup
 
 void draw() {
   background(255);
-  
-  //earth.display();
+  earth.display();
+
   for (int o=0; o<orbs.length; o++) {
     orbs[o].display();
   }
@@ -33,7 +33,7 @@ void draw() {
   if (moving) {
 
     for (int o=0; o<orbs.length; o++)  {
-      PVector g = orbs[o].getGravity(orbs[0], gconstant);
+      PVector g = orbs[o].getGravity(earth, gconstant);
       orbs[o].applyForce(g);
     }
 
@@ -50,8 +50,6 @@ void keyPressed() {
   if (key == 'r') {
     makeOrbs(true, true);
     moving = false;
-    orbs[0] = new FixedOrb(width/2, height*500, 20, 1000);
-
   }
 }//keyPressed
 
