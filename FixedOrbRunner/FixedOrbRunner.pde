@@ -18,11 +18,14 @@ void setup() {
 
   orbs = new Orb[NUM_ORBS];
   makeOrbs(true, true);
+  orbs[0] = new FixedOrb(width/2, height*500, 20, 1000);
+  
 }//setup
 
 void draw() {
   background(255);
-
+  
+  //earth.display();
   for (int o=0; o<orbs.length; o++) {
     orbs[o].display();
   }
@@ -30,7 +33,8 @@ void draw() {
   if (moving) {
 
     for (int o=0; o<orbs.length; o++)  {
-
+      PVector g = orbs[o].getGravity(orbs[0], gconstant);
+      orbs[o].applyForce(g);
     }
 
     for (int o=0; o<orbs.length; o++) {
@@ -46,6 +50,8 @@ void keyPressed() {
   if (key == 'r') {
     makeOrbs(true, true);
     moving = false;
+    orbs[0] = new FixedOrb(width/2, height*500, 20, 1000);
+
   }
 }//keyPressed
 
