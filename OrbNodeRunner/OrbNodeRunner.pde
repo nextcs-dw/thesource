@@ -17,18 +17,36 @@ boolean[] toggles = new boolean[4];
 String[] modes = {"Moving", "Bounce", "Gravity", "Drag"};
 
 FixedOrb earth;
+OrbNode o0, o1;
 
 void setup() {
   size(600, 600);
 
   earth = new FixedOrb(width/2, height * 200, 1, 20000);
+  
+  o0 = new OrbNode();
+  o1 = new OrbNode();
+
+  o0.next = o1;
+  o1.previous = o0;
 
 }//setup
 
 void draw() {
   background(255);
   displayMode();
-
+  
+  o0.display();
+  o1.display();
+  
+  PVector sf = o0.getSpring(o0.next, SPRING_LENGTH, SPRING_K);
+  o0.applyForce(sf);
+  sf = o1.getSpring(o1.previous, SPRING_LENGTH, SPRING_K);
+  o1.applyForce(sf);
+  
+  o0.move(toggles[BOUNCE]);
+  o1.move(toggles[BOUNCE]);
+  
 }//draw
 
 
