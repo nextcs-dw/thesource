@@ -17,39 +17,49 @@ boolean[] toggles = new boolean[4];
 String[] modes = {"Moving", "Bounce", "Gravity", "Drag"};
 
 FixedOrb earth;
-OrbNode o0, o1;
+OrbNode o0, o1, o2, o3;
 
 void setup() {
   size(600, 600);
 
   earth = new FixedOrb(width/2, height * 200, 1, 20000);
-  
-  o0 = new OrbNode();
-  o1 = new OrbNode();
-
-  o0.next = o1;
-  o1.previous = o0;
+  makeOrbs();
 
 }//setup
 
 void draw() {
   background(255);
   displayMode();
-  
+
+
   o0.display();
   o1.display();
-  
+
   PVector sf = o0.getSpring(o0.next, SPRING_LENGTH, SPRING_K);
   o0.applyForce(sf);
   sf = o1.getSpring(o1.previous, SPRING_LENGTH, SPRING_K);
   o1.applyForce(sf);
-  
+
   o0.move(toggles[BOUNCE]);
   o1.move(toggles[BOUNCE]);
-  
+
 }//draw
 
 
+void makeOrbs() {
+  o0 = new OrbNode();
+  o1 = new OrbNode();
+  o2 = new OrbNode();
+  o3 = new OrbNode();
+
+  o0.next = o1;
+  o1.previous = o0;
+  o1.next = o2;
+  o2.previous = o1;
+  o2.next = o3;
+  o3.previous = o2;
+
+}
 
 
 void keyPressed() {
@@ -57,13 +67,15 @@ void keyPressed() {
   if (key == 'g') { toggles[GRAVITY] = !toggles[GRAVITY]; }
   if (key == 'b') { toggles[BOUNCE] = !toggles[BOUNCE]; }
   if (key == 'd') { toggles[DRAGF] = !toggles[DRAGF]; }
-}
+  if (key == 'r') {
+    makeOrbs();
+  }
+}//keyPressed
 
 void displayMode() {
   textAlign(LEFT, TOP);
   textSize(20);
   noStroke();
-  int spacing = 85;
   int x = 0;
 
   for (int m=0; m<toggles.length; m++) {
