@@ -22,15 +22,12 @@ class TreeNode {
     if (right != null) {
       line(position.x, position.y, right.position.x, right.position.y);
     }
-    
     fill(c);
     circle(position.x, position.y, size);
     fill(0);
     textAlign(CENTER, CENTER);
     textSize(size);
     text(data, position.x, position.y);
-    
-    
   }//display
 
 }//TreeNode
