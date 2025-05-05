@@ -40,7 +40,24 @@ class Tree {
       return n;
     }//make subtree
   }//makeTree
-
+  
+  int getHeight() {
+    return getHeight(root);
+  }
+  int getHeight(TreeNode current) {
+    if (current == null) {
+      return 0;
+    }
+    else {
+      int lHeight = getHeight(current.left);
+      int rHeight = getHeight(current.right);
+      return max(lHeight, rHeight) + 1;
+    }
+  }//getHeight
+  
+  void display() {
+    display(root);
+  }//wrapper method
   void display(TreeNode current) {
     if (current != null) {
       current.display();

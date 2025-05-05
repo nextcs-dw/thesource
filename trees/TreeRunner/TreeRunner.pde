@@ -9,13 +9,16 @@ void setup() {
 
   full = false;
   oak = new Tree(width/2, 50, 5, full);
-  oak.display(oak.root);
-
+  oak.display();
+  
+ 
 }//setup
 
 void draw() {
   background(200);
-  oak.display(oak.root);
+  oak.display();
+  textAlign(LEFT, TOP);
+   text(oak.getHeight(), 0, 0);
 }//draw
 
 
