@@ -17,9 +17,15 @@ class ExpressionTree {
       return null;
     }//base case
     else {
-      char c = char(int(random(26)) + 'A');
-      ExpressionTreeNode n = new ExpressionTreeNode(c, x, y);
-
+      ExpressionTreeNode n;
+      
+      if (levels == 1) {      
+        n = new ExpressionTreeNode(VALUE, 8, x, y);
+      }
+      else {
+        n = new ExpressionTreeNode(PLUS, 8, x, y);
+      }
+     
       //x position of each node is based on its level
       //root is at width/2
       //level 1 nodes are width/4 away from root
@@ -31,10 +37,8 @@ class ExpressionTree {
       int xRight = int(x + xspacing);
       y+= YSPACE;
 
-      if (full || random(1) < 0.6) {
+      if ( levels != 1) {
         n.left = makeExpressionTree(xLeft, y, levels-1, full);
-      }
-      if (full || random(1) < 0.6) {
         n.right = makeExpressionTree(xRight, y, levels-1, full);
       }
       return n;

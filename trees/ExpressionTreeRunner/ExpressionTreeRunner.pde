@@ -14,8 +14,8 @@ boolean full;
 void setup() {
   size(800, 500);
 
-  full = false;
-  oak = new ExpressionTree(width/2, 50, 5, full);
+  full = true;
+  oak = new ExpressionTree(width/2, 50, 4,full);
   oak.display(oak.root);
 
 }//setup

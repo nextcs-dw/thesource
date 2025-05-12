@@ -7,18 +7,19 @@ class ExpressionTreeNode {
   int size;
   color c;
   
-  int type;
   float value;
+  int type;
 
   ExpressionTreeNode(int t, float v, int x, int y) {
     position = new PVector(x, y);
     type = t;
-    if (type != VALUE) {
-      value = 0;
-    }
-    else {
+    if (type == VALUE) {
       value = v;
     }
+    else {
+      value = 0;
+    }
+    
     size = NODE_SIZE;
     c = color(255, 0, 255);
   }
@@ -41,6 +42,7 @@ class ExpressionTreeNode {
     else {
       text(type, position.x, position.y);
     }
+
   }//display
 
 }//ExpressionTreeNode
