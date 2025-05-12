@@ -6,11 +6,19 @@ class ExpressionTreeNode {
   PVector position;
   int size;
   color c;
-  char data;
+  
+  int type;
+  float value;
 
-  ExpressionTreeNode(char d, int x, int y) {
+  ExpressionTreeNode(int t, float v, int x, int y) {
     position = new PVector(x, y);
-    data = d;
+    type = t;
+    if (type != VALUE) {
+      value = 0;
+    }
+    else {
+      value = v;
+    }
     size = NODE_SIZE;
     c = color(255, 0, 255);
   }
@@ -27,7 +35,12 @@ class ExpressionTreeNode {
     fill(0);
     textAlign(CENTER, CENTER);
     textSize(size);
-    text(data, position.x, position.y);
+    if (type == VALUE) {
+      text(value, position.x, position.y);
+    }
+    else {
+      text(type, position.x, position.y);
+    }
   }//display
 
 }//ExpressionTreeNode

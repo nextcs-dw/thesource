@@ -1,6 +1,13 @@
 int NODE_SIZE = 30;
 int YSPACE = 100;
 
+int VALUE = 0;
+int PLUS = 1;
+int MINUS = 2;
+int TIMES = 3;
+int DIVIDE = 4;
+
+
 ExpressionTree oak;
 boolean full;
 
