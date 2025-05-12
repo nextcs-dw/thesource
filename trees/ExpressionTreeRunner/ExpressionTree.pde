@@ -1,24 +1,24 @@
-class Tree {
+class ExpressionTree {
 
-  TreeNode root;
+  ExpressionTreeNode root;
   int numLevels;
 
-  Tree(int x, int y, int levels, boolean full) {
+  ExpressionTree(int x, int y, int levels, boolean full) {
     numLevels = levels;
-    root = makeTree(x, y, numLevels, full);
+    root = makeExpressionTree(x, y, numLevels, full);
   }//constructor
 
   void reset(boolean full) {
-    root = makeTree(int(root.position.x), int(root.position.y), numLevels, full);
+    root = makeExpressionTree(int(root.position.x), int(root.position.y), numLevels, full);
   }//reset
 
-  TreeNode makeTree(int x, int y, int levels, boolean full) {
+  ExpressionTreeNode makeExpressionTree(int x, int y, int levels, boolean full) {
     if (levels == 0) {
       return null;
     }//base case
     else {
       char c = char(int(random(26)) + 'A');
-      TreeNode n = new TreeNode(c, x, y);
+      ExpressionTreeNode n = new ExpressionTreeNode(c, x, y);
 
       //x position of each node is based on its level
       //root is at width/2
@@ -32,21 +32,21 @@ class Tree {
       y+= YSPACE;
 
       if (full || random(1) < 0.6) {
-        n.left = makeTree(xLeft, y, levels-1, full);
+        n.left = makeExpressionTree(xLeft, y, levels-1, full);
       }
       if (full || random(1) < 0.6) {
-        n.right = makeTree(xRight, y, levels-1, full);
+        n.right = makeExpressionTree(xRight, y, levels-1, full);
       }
       return n;
-    }//make subtree
-  }//makeTree
+    }//make subExpressionTree
+  }//makeExpressionTree
 
-  void display(TreeNode current) {
+  void display(ExpressionTreeNode current) {
     if (current != null) {
       current.display();
       display(current.left);
       display(current.right);
     }
-  }//drawTree
+  }//drawExpressionTree
 
-}//Tree
+}//ExpressionTree
